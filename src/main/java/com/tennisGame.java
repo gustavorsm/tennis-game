@@ -60,15 +60,7 @@ public class tennisGame
     private String normal3(String score) {
         if (P2point>P1point && P2point < 4)
         {
-            if (P2point==2)
-                P2res="Thirty";
-            if (P2point==3)
-                P2res="Forty";
-            if (P1point==1)
-                P1res="Fifteen";
-            if (P1point==2)
-                P1res="Thirty";
-            score = P1res + "-" + P2res;
+            score = getLiteral(P2point) + "-" + getLiteral(P1point);
         }
         return score;
     }
@@ -76,31 +68,16 @@ public class tennisGame
     private String normal2(String score) {
         if (P1point>P2point && P1point < 4)
         {
-            if (P1point==2)
-                P1res="Thirty";
-            if (P1point==3)
-                P1res="Forty";
-            if (P2point==1)
-                P2res="Fifteen";
-            if (P2point==2)
-                P2res="Thirty";
-            score = P1res + "-" + P2res;
+            score = getLiteral(P1point) + "-" + getLiteral(P2point);
         }
         return score;
     }
 
     private String normal1(String score) {
-        if (P2point > 0 && P1point==0)
+        int p2point2 = P2point;
+        if (p2point2 > 0 && P1point==0)
         {
-            if (P2point==1)
-                P2res = "Fifteen";
-            if (P2point==2)
-                P2res = "Thirty";
-            if (P2point==3)
-                P2res = "Forty";
-
-            P1res = "Love";
-            score = P1res + "-" + P2res;
+            score = getLiteral(p2point2) + "-" + getLiteral(P1point);
         }
         return score;
     }
